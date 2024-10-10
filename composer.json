@@ -1,0 +1,18 @@
+{
+    "name": "bizado/ae-php-sdk",
+    "description": "AliExpress PHP SDK adapted for Composer installation",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "AliExpress\\Sdk\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Luiz",
+            "email": "email@example.com"
+        }
+    ],
+    "require": {}
+}
