@@ -2,7 +2,6 @@
 
 namespace AliExpress\Sdk;
 
-<?php
 class Constants
 {
 	static $log_level_debug = "DEBUG";
