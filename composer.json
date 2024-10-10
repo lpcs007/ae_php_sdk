@@ -1,5 +1,5 @@
 {
-    "name": "bizado/ae-php-sdk",
+    "name": "lpcs007/ae-php-sdk",
     "description": "AliExpress PHP SDK adapted for Composer installation",
     "type": "library",
     "license": "MIT",
@@ -10,8 +10,7 @@
     },
     "authors": [
         {
-            "name": "Luiz",
-            "email": "email@example.com"
+            "name": "Luiz Silva"
         }
     ],
     "require": {}
