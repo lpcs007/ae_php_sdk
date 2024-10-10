@@ -2,6 +2,9 @@
 
 namespace AliExpress\Sdk;
 
+use AliExpress\Sdk\Constants;
+use Exception;
+
 class IopClient
 {
 	public $appkey;
@@ -29,7 +32,7 @@ class IopClient
 	{
 		$length = strlen($url);
 		if ($length == 0) {
-			throw new \Exception("url is empty", 0);
+			throw new Exception("url is empty", 0);
 		}
 		$this->gatewayUrl = $url;
 		$this->appkey = $appkey;
@@ -104,12 +107,12 @@ class IopClient
 
 		if ($errno) {
 			curl_close($ch);
-			throw new \Exception($errno, 0);
+			throw new Exception($errno, 0);
 		} else {
 			$httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 			curl_close($ch);
 			if (200 !== $httpStatusCode) {
-				throw new \Exception($response, $httpStatusCode);
+				throw new Exception($response, $httpStatusCode);
 			}
 		}
 
@@ -189,12 +192,12 @@ class IopClient
 		$errno = curl_errno($ch);
 		if ($errno) {
 			curl_close($ch);
-			throw new \Exception($errno, 0);
+			throw new Exception($errno, 0);
 		} else {
 			$httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 			curl_close($ch);
 			if (200 !== $httpStatusCode) {
-				throw new \Exception($response, $httpStatusCode);
+				throw new Exception($response, $httpStatusCode);
 			}
 		}
 
@@ -245,7 +248,7 @@ class IopClient
 			} else {
 				$resp = $this->curl_get($requestUrl, $apiParams, $request->headerParams);
 			}
-		} catch (\Exception $e) {
+		} catch (Exception $e) {
 			$this->logApiError($requestUrl, "HTTP_ERROR_" . $e->getCode(), $e->getMessage());
 			throw $e;
 		}
